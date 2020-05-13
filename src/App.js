@@ -1,26 +1,18 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect, createContext, Fragment } from 'react';
+import GlobalStyles from './styles/global';
+import PublicRoutes from './routes/PublicRoutes';
 
-function App() {
+const App = () => {
+
+  const [authUser, setAuthUser] = useState({});
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <AppContext.Provider value={{ authUser }}>
+      <GlobalStyles />
+      <PublicRoutes />
+    </AppContext.Provider>
+  )
 }
 
-export default App;
+export const AppContext = createContext()
+export default App
