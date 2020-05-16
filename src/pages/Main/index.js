@@ -1,22 +1,14 @@
 import React from 'react';
-import { Switch, BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Menu from '../../components/Menu';
-import ListEmployees from '../../components/ListEmployees';
-import FormEmployee from '../../components/Forms/Employee';
+import Employees from './Employees';
 import { Container } from './styles';
 
-const Main = (props) => {
-
+const Main = ({ match, location }) => {
   return (
     <Container>
-      <Menu {...props} />
-      <FormEmployee  {...props} />
-      {/* <Router>
-        <Switch>
-          <Route exact path={`${props.match.path}/employees`} component={() => <ListEmployees  {...props} />} />
-          <Route exact path={`${props.match.path}/employees/new`} component={() => <FormEmployee  {...props} />} />
-        </Switch>
-      </Router> */}
+      <Menu match={match} location={location} />
+      <Route path={`${match.path}/employees`} component={(props) => <Employees  {...props} />} />
     </Container>
   )
 }

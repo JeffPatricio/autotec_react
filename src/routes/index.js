@@ -9,8 +9,8 @@ const Routes = ({ authUser }) => {
   return (
     <Router>
       <Switch>
-        <Route exact path='/' render={() => authUser.authenticated ? <Redirect to='/main/employees' /> : <Redirect to='/login' />} />
-        <Route exact path='/login' render={() => authUser.authenticated ? <Redirect to='/main/employees' /> : <Login />} />
+        <Route exact path='/' render={() => authUser.authenticated ? <Redirect to='/main' /> : <Redirect to='/login' />} />
+        <Route exact path='/login' render={() => authUser.authenticated ? <Redirect to='/main' /> : <Login />} />
         <PrivateRoute path='/main' component={Main} authUser={authUser} />
         <PrivateRoute exact path='/updatePassword' component={Update} authUser={authUser} />
       </Switch>
