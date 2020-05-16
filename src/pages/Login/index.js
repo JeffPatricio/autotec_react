@@ -18,7 +18,10 @@ const Login = () => {
     if (!loading) {
       try {
         setLoading(true);
-        if (!cpf || !password || cpf.length < 11) return Toast('CPF ou senha inválidos', 'error');
+        if (!cpf || !password || cpf.length < 11) {
+          setLoading(false);
+          return Toast('CPF ou senha inválidos', 'error');
+        }
         postApi('/session', { cpf, password }).then((res) => {
           if (!res.success) {
             setLoading(false);

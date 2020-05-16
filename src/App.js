@@ -19,7 +19,7 @@ const App = () => {
         setLoading(false);
       }
     })()
-  }, [])
+  }, [authUser])
 
   return (
     <AppContext.Provider value={{ authUser, setAuthUser }}>

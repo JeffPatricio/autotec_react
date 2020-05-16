@@ -16,7 +16,7 @@ const Menu = ({ history }) => {
 
   const appData = useContext(AppContext);
   const [viewerVisible, setViewerVisible] = useState(false);
-  const menuActive = history.location.pathname.replace('/main/', '');
+  const menuActive = history.location.pathname
 
   return (
     <Container>
@@ -51,9 +51,9 @@ const Menu = ({ history }) => {
           <Icon icon={shoppingCart} width={'25px'} />
           <TitleItem>Estoque</TitleItem>
         </ContainerItem>
-        <ContainerItem active={menuActive === 'employees'}>
-          <Icon icon={groupIcon} width={'25px'} color={menuActive === 'employees' ? '#FFF' : '#333'} />
-          <TitleItem color={menuActive === 'employees' ? '#FFF' : '#333'}>Funcionários</TitleItem>
+        <ContainerItem active={menuActive.indexOf('employees') > -1} onClick={() => history.push('/main/employees')}>
+          <Icon icon={groupIcon} width={'25px'} color={menuActive.indexOf('employees') > -1 ? '#FFF' : '#333'} />
+          <TitleItem color={menuActive.indexOf('employees') > -1 ? '#FFF' : '#333'}>Funcionários</TitleItem>
         </ContainerItem>
         <ContainerItem>
           <Icon icon={barChart} width={'25px'} />
