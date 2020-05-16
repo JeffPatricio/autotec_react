@@ -42,7 +42,7 @@ const Login = () => {
     <Container>
       <Form>
         <Logo src={srcLogo} />
-        <MaskInput mask="999.999.999-99" type='text' placeholder='CPF' value={cpf} onChange={e => setCpf(e.currentTarget.value.replace(/\D/g, ''))} />
+        <MaskInput mask='999.999.999-99' type='text' placeholder='CPF' value={cpf} onChange={e => setCpf(e.currentTarget.value.replace(/\D/g, ''))} />
         <Input type='password' placeholder='Senha' value={password} onChange={e => setPassword(e.currentTarget.value)} />
         <Submit onClick={submitLogin}>
           {(loading) && <Loading width='25px' />}

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../Header';
 import InputSearch from '../InputSearch';
 import Button from '../Button';
 import { Container, ContainerBody, ContainerOptions } from './styles';
 
-const ListEmployees = (props) => {
+const ListEmployees = ({ match }) => {
 
   const [search, setSearch] = useState('');
 
@@ -18,11 +19,9 @@ const ListEmployees = (props) => {
             onChange={e => setSearch(e.currentTarget.value)}
             placeholder='Digite o nome ou o CPF do funcionário...'
           />
-          <Button
-            type='new'
-            style={{ marginLeft: '20px' }}
-            onClick={() => props.history.push('/main/employees/new')}
-          />
+          <Link to={`${match.url}/new`}>
+            <Button type='new' style={{ marginLeft: '20px' }} />
+          </Link>
         </ContainerOptions>
       </ContainerBody>
     </Container>

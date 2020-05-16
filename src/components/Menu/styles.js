@@ -43,12 +43,14 @@ export const TitleItem = styled.p`
   padding-left: 10px;
 `;
 
-export const Profile = styled.img`
+export const Profile = styled.div`
   height: 90px;
   width: 90px;
   border-radius: 45px;
   cursor: pointer;
   background: #EEE;
+  background-image: url(${ props => props.src});
+  background-size: cover;
 `;
 
 export const Name = styled.p`

@@ -1,4 +1,5 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useCallback } from 'react';
+import { NavLink } from "react-router-dom";
 import { Icon } from '@iconify/react';
 import groupIcon from '@iconify/icons-icons8/group';
 import importIcon from '@iconify/icons-icons8/import';
@@ -12,11 +13,11 @@ import { AppContext } from '../../App';
 import srcLogo from '../../assets/logo.png';
 import { Container, ContainerProfile, Profile, Name, Detail, ContainerItems, Logo, ContainerItem, TitleItem } from './styles';
 
-const Menu = ({ history }) => {
+const Menu = ({ location, match }) => {
 
   const appData = useContext(AppContext);
+  const active = useCallback((item) => location.pathname.indexOf(item) > -1 ? '#FFF' : '#333', [location]);
   const [viewerVisible, setViewerVisible] = useState(false);
-  const menuActive = history.location.pathname
 
   return (
     <Container>
@@ -35,34 +36,56 @@ const Menu = ({ history }) => {
       </ContainerProfile>
       <Detail />
       <ContainerItems className='items-menu'>
-        <ContainerItem>
-          <Icon icon={homeIcon} width={'25px'} />
-          <TitleItem>Início</TitleItem>
-        </ContainerItem>
-        <ContainerItem>
-          <Icon icon={genderNeutralUser} width={'25px'} />
-          <TitleItem>Meu Perfil</TitleItem>
-        </ContainerItem>
-        <ContainerItem>
-          <Icon icon={boxIcon} width={'25px'} />
-          <TitleItem>Produtos</TitleItem>
-        </ContainerItem>
-        <ContainerItem>
-          <Icon icon={shoppingCart} width={'25px'} />
-          <TitleItem>Estoque</TitleItem>
-        </ContainerItem>
-        <ContainerItem active={menuActive.indexOf('employees') > -1} onClick={() => history.push('/main/employees')}>
-          <Icon icon={groupIcon} width={'25px'} color={menuActive.indexOf('employees') > -1 ? '#FFF' : '#333'} />
-          <TitleItem color={menuActive.indexOf('employees') > -1 ? '#FFF' : '#333'}>Funcionários</TitleItem>
-        </ContainerItem>
-        <ContainerItem>
-          <Icon icon={barChart} width={'25px'} />
-          <TitleItem>Relatórios</TitleItem>
-        </ContainerItem>
-        <ContainerItem active={false} onClick={() => {
-          sessionStorage.setItem('tokenAccess', '');
-          appData.setAuthUser({ authenticated: false })
-        }}>
+
+        <NavLink to={`${match.url}/home`}>
+          <ContainerItem active={active('home') === '#FFF'}>
+            <Icon icon={homeIcon} width={'25px'} color={active('home')} />
+            <TitleItem color={active('home')}>Início</TitleItem>
+          </ContainerItem>
+        </NavLink>
+
+        <NavLink to={`${match.url}/profile`}>
+          <ContainerItem active={active('profile') === '#FFF'}>
+            <Icon icon={genderNeutralUser} width={'25px'} color={active('profile')} />
+            <TitleItem color={active('profile')}>Meu Perfil</TitleItem>
+          </ContainerItem>
+        </NavLink>
+
+        <NavLink to={`${match.url}/products`}>
+          <ContainerItem active={active('products') === '#FFF'}>
+            <Icon icon={boxIcon} width={'25px'} color={active('products')} />
+            <TitleItem color={active('products')}>Produtos</TitleItem>
+          </ContainerItem>
+        </NavLink>
+
+        <NavLink to={`${match.url}/stock`}>
+          <ContainerItem active={active('stock') === '#FFF'}>
+            <Icon icon={shoppingCart} width={'25px'} color={active('stock')} />
+            <TitleItem color={active('stock')}>Estoque</TitleItem>
+          </ContainerItem>
+        </NavLink>
+
+        <NavLink to={`${match.url}/employees`}>
+          <ContainerItem active={active('employees') === '#FFF'}>
+            <Icon icon={groupIcon} width={'25px'} color={active('employees')} />
+            <TitleItem color={active('employees')}>Funcionários</TitleItem>
+          </ContainerItem>
+        </NavLink>
+
+        <NavLink to={`${match.url}/reports`}>
+          <ContainerItem active={active('reports') === '#FFF'}>
+            <Icon icon={barChart} width={'25px'} color={active('reports')} />
+            <TitleItem color={active('reports')}>Relatórios</TitleItem>
+          </ContainerItem>
+        </NavLink>
+
+        <ContainerItem
+          active={false}
+          onClick={() => {
+            sessionStorage.setItem('tokenAccess', '');
+            appData.setAuthUser({ authenticated: false })
+          }}
+        >
           <Icon icon={importIcon} width={'25px'} />
           <TitleItem>Sair</TitleItem>
         </ContainerItem>
