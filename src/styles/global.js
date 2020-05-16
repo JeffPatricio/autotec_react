@@ -10,13 +10,16 @@ const GlobalStyle = createGlobalStyle`
   body{
     text-rendering: optimizeLegibility !important;
     -webkit-font-smoothing: antialiased !important;
-    font-family: sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
   body,html,#root{
     height:100%
   }
   ::placeholder {
     color: #777;
+  }
+  .items-menu::-webkit-scrollbar {
+    display: none;
   }
 `;
 

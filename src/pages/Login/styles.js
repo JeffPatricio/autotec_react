@@ -58,9 +58,12 @@ export const MaskInput = styled(InputMask)`
 
 export const Submit = styled.button`
 	background-color: #3EA2FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 	color: #fff;
 	border: 0;
-  width: 60%;
+  width: 50%;
   height: 40px;
 	border-radius: 6px;
   margin-bottom: 5%;
@@ -69,12 +72,4 @@ export const Submit = styled.button`
   &:hover{
     background-color: #3E90FF;
   }
-`;
-
-
-export const Error = styled.p`
-	color: #F00;
-  font-size: 14px;
-  text-align: center;
-  margin-bottom: 3%;
 `;
