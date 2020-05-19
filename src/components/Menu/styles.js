@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Container = styled.div`
   width: 300px;
@@ -7,6 +7,14 @@ export const Container = styled.div`
   box-shadow: 0px 4px 4px #999;
   display: flex;
   flex-direction: column;
+  padding-bottom: 8px;
+  @media (max-width: 668px) {
+    position: absolute;
+    width: 80%;
+    z-index: 3;
+    transition: transform 0.3s ease-out;
+    transform: ${ props => props.menuActive ? 'translateX(0)' : 'translateX(-102%)'};
+  }
 `;
 
 export const ContainerProfile = styled.div`
@@ -39,7 +47,7 @@ export const ContainerItem = styled.div`
 
 export const TitleItem = styled.p`
   color: ${props => props.color || '#333'};
-  font-size: 18px;
+  font-size: 16px;
   padding-left: 10px;
 `;
 
@@ -55,7 +63,7 @@ export const Profile = styled.div`
 
 export const Name = styled.p`
   color: #FFF;
-  font-size: 18px;
+  font-size: 16px;
   padding-top: 5px;
   cursor: default;
 `;
@@ -78,4 +86,17 @@ export const Logo = styled.img`
     transition: 0.3s;
     transform: scale(1.2);
   };
+`;
+
+export const BackgroundMenu = styled.div`
+  display: none;
+  @media (max-width: 668px) {
+    display: flex;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background: rgba(0,0,0,0.7);
+    transition: opacity 0.5s ease-in-out;
+  }
 `;

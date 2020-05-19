@@ -15,7 +15,10 @@ const Button = ({ text, type = 'primary', ...props }) => {
         </Fragment>
       }
       {
-        (type !== 'new') && `${text}`
+        (type !== 'new' && text) && `${text}`
+      }
+      {
+        (type !== 'new' && !text) && { ...props.children }
       }
     </ButtonComponent>
   )

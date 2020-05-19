@@ -6,7 +6,7 @@ import { Container, Input } from './styles';
 const InputSearch = (props) => {
   return (
     <Container>
-      <Icon icon={searchIcon} width={'35px'} color='#DDD' style={{ transform: 'scaleX(-1)' }} />
+      <Icon icon={searchIcon} width={'30px'} color='#DDD' style={{ transform: 'scaleX(-1)' }} />
       <Input {...props} />
     </Container>
   )

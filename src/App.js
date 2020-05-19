@@ -8,6 +8,7 @@ const App = () => {
 
   const [authUser, setAuthUser] = useState({ authenticated: false });
   const [loading, setLoading] = useState(true);
+  const [menuMobileActive, setMenuMobileActive] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -22,7 +23,7 @@ const App = () => {
   }, [authUser])
 
   return (
-    <AppContext.Provider value={{ authUser, setAuthUser }}>
+    <AppContext.Provider value={{ authUser, setAuthUser, menuMobileActive, setMenuMobileActive }}>
       <GlobalStyles />
       {(loading) && <LoadingPage />}
       {(!loading) && <Routes authUser={authUser} />}

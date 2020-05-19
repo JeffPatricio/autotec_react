@@ -6,7 +6,12 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: ${props => props.width};
-  padding: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  @media (max-width: 668px) {
+    width: 100% !important;
+    padding-bottom: 20px;
+  }
 `;
 
 export const Label = styled.label`
@@ -23,6 +28,7 @@ export const InputText = styled.input`
   border: 1px solid #DDD;
   border-radius: 6px;
   padding: 0px 10px;
+  max-height: 40px;
   min-height: 40px;
   font-size: 16px;
   color: #333;
@@ -38,6 +44,7 @@ export const InputMask = styled(Mask)`
   border: 1px solid #DDD;
   border-radius: 6px;
   padding: 0px 10px;
+  max-height: 40px;
   min-height: 40px;
   font-size: 16px;
   color: #333;

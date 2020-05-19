@@ -37,6 +37,9 @@ export const Input = styled.input`
   width: 80%;
   margin-bottom: 5%;
   font-size: 15px;
+  @media (max-width: 668px) {
+    width: 90%;
+  }
   &:focus{
     box-shadow: 0px 0px 3px #BBB;
   }
@@ -51,6 +54,9 @@ export const MaskInput = styled(InputMask)`
   width: 80%;
   margin-bottom: 5%;
   font-size: 15px;
+  @media (max-width: 668px) {
+    width: 90%;
+  }
   &:focus{
     box-shadow: 0px 0px 3px #BBB;
   }

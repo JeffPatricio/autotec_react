@@ -5,7 +5,7 @@ export const ButtonComponent = styled.button`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 45px;
+  height: 40px;
   border: 0;
   border-radius: 6px;
   padding: 10px 40px;
