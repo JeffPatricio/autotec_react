@@ -16,6 +16,7 @@ export const Input = styled.input`
   flex: 1;
   align-self: stretch;
   border: 0;
+  background: transparent;
   padding: 2px 2px 2px 10px;
   font-size: 16px;
   color: #333;

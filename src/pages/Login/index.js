@@ -28,7 +28,7 @@ const Login = () => {
             return Toast(res.message, 'error');
           }
           setLoading(false);
-          sessionStorage.setItem('tokenAccess', res.token);
+          localStorage.setItem('tokenAccess', res.token);
           appConfig.setAuthUser({ ...res.user, authenticated: true });
         })
       } catch (e) {

@@ -13,7 +13,7 @@ const Header = ({ title }) => {
     <Container>
       {
         (isMobile) &&
-        <Icon icon={menuOutlined} width={'20px'} color='#FFF' onClick={() => appData.setMenuMobileActive(true)} />
+        <Icon icon={menuOutlined} width={'25px'} color='#FFF' onClick={() => appData.setMenuMobileActive(true)} />
       }
       <Title>{title}</Title>
     </Container>

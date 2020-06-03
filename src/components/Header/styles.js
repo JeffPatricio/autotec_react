@@ -3,9 +3,10 @@ import styled from 'styled-components';
 export const Container = styled.div`
   align-self: stretch;
   background: #EEE;
-  box-shadow: 0px 0px 10px #999;
+  box-shadow: 0px 0px 10px #333;
   padding: 20px 30px;
   align-items: center;
+  z-index: 3;
   @media (max-width: 668px) {
     display: flex;
     background: #3EA2FF;
@@ -21,5 +22,6 @@ export const Title = styled.p`
   @media (max-width: 668px) {
     color: #FFF;
     margin-left: 20px;
+    font-size: 22px;
   }
 `;

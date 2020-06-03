@@ -5,10 +5,11 @@ export const ButtonComponent = styled.button`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 40px;
   border: 0;
   border-radius: 6px;
   padding: 10px 40px;
+  height: 40px;
+  max-height: 40px;
   font-size: 16px;
   color: #FFF;
   background: ${props => props.type === 'new' || props.type === 'primary' ? '#3EA2FF' : '#BBB'};

@@ -14,7 +14,7 @@ const App = () => {
     (async () => {
       if (!authUser.authenticated) {
         setLoading(true);
-        const token = await sessionStorage.getItem('tokenAccess');
+        const token = await localStorage.getItem('tokenAccess');
         const { success, user } = await getApi('/session', token);
         if (success) setAuthUser({ ...user, authenticated: true });
         setLoading(false);

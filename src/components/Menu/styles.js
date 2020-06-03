@@ -4,14 +4,15 @@ export const Container = styled.div`
   width: 300px;
   height: 100%;
   background: #EEE;
-  box-shadow: 0px 4px 4px #999;
+  box-shadow: 0px 0px 10px #333;
+  z-index: 6;
   display: flex;
   flex-direction: column;
   padding-bottom: 8px;
   @media (max-width: 668px) {
     position: absolute;
     width: 80%;
-    z-index: 3;
+    z-index: 6;
     transition: transform 0.3s ease-out;
     transform: ${ props => props.menuActive ? 'translateX(0)' : 'translateX(-102%)'};
   }
@@ -49,6 +50,9 @@ export const TitleItem = styled.p`
   color: ${props => props.color || '#333'};
   font-size: 16px;
   padding-left: 10px;
+  @media (max-width: 668px) {
+    font-size: 20px;
+  }
 `;
 
 export const Profile = styled.div`
@@ -59,6 +63,11 @@ export const Profile = styled.div`
   background: #EEE;
   background-image: url(${ props => props.src});
   background-size: cover;
+  @media (max-width: 668px) {
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+  }
 `;
 
 export const Name = styled.p`
@@ -66,6 +75,9 @@ export const Name = styled.p`
   font-size: 16px;
   padding-top: 5px;
   cursor: default;
+  @media (max-width: 668px) {
+    font-size: 20px;
+  }
 `;
 
 export const Detail = styled.hr`
@@ -93,9 +105,9 @@ export const BackgroundMenu = styled.div`
   @media (max-width: 668px) {
     display: flex;
     position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 2;
+    height: 101%;
+    width: 101%;
+    z-index: 4;
     background: rgba(0,0,0,0.7);
     transition: opacity 0.5s ease-in-out;
   }

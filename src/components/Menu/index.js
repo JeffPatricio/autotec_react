@@ -83,7 +83,7 @@ const Menu = ({ location, match }) => {
           <ContainerItem
             active={false}
             onClick={() => {
-              sessionStorage.setItem('tokenAccess', '');
+              localStorage.setItem('tokenAccess', '');
               appData.setAuthUser({ authenticated: false });
             }}
           >
