@@ -14,7 +14,7 @@ const Home = () => {
 
   const appData = useContext(AppContext);
   const isMobile = window.screen.width <= 678;
-  const [lowStock, setLowStock] = useState([
+  const [lowStock] = useState([
     {
       name: 'Amortecedor',
       qtd: 10
@@ -32,8 +32,8 @@ const Home = () => {
       qtd: 22
     }
   ]);
-  const [outStock, setOutStock] = useState(8);
-  const [stockEntry, setStockEntry] = useState(13);
+  const [outStock] = useState(8);
+  const [stockEntry] = useState(13);
 
   return (
     <Container>

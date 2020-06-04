@@ -8,7 +8,7 @@ const Reports = ({ match }) => {
       <Header title='Relatórios' />
       <ContainerBody>
         <Ilustration src={require('../../assets/man.png')} />
-        <Title>Ops... Esta funcionalidade ainda está em desenvolvimento, por favor volte daqui algumas décadas.</Title>
+        <Title>Ops... Esta funcionalidade ainda está em desenvolvimento, por favor volte daqui alguns dias.</Title>
       </ContainerBody>
     </Container>
   )

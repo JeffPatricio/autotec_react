@@ -20,10 +20,9 @@ export const Ilustration = styled.img`
 `;
 
 export const Title = styled.p`
-  font-size: 22px;
+  font-size: 20px;
   max-width: 80%;
   color: #999;
-  font-weight: 600;
   text-align: center;
   margin-top: 20px;
 `;

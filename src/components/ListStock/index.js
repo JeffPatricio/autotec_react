@@ -11,7 +11,7 @@ const ListStock = ({ match }) => {
 
   const isMobile = window.screen.width <= 678;
   const [search, setSearch] = useState('');
-  const [stock, setStock] = useState([
+  const [stock] = useState([
     {
       name: 'Amortecedor',
       unMed: 'PC',

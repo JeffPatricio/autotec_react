@@ -2,7 +2,7 @@ import React from 'react';
 import Header from '../../Header';
 import Button from '../../Button';
 import Input from '../../Input';
-import { Container, ContainerBody, ContainerOptions, Form, FormRow } from './styles';
+import { Container, ContainerBody, ContainerOptions, Form } from './styles';
 
 const Product = ({ history }) => {
   return (

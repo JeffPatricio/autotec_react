@@ -11,7 +11,6 @@ const Profile = () => {
   const appData = useContext(AppContext);
   const isMobile = window.screen.width <= 678;
   const [viewerVisible, setViewerVisible] = useState(false);
-  const [search, setSearch] = useState('');
 
   return (
     <Container>

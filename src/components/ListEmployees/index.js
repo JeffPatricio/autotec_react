@@ -9,14 +9,14 @@ import Header from '../Header';
 import InputSearch from '../InputSearch';
 import Button from '../Button';
 import Input from '../Input';
-import { Container, ContainerBody, ContainerOptions, TableEmployees, Td, Tr, ButtonTable, ContainerModal, Modal, ModalIcon, ModalTitle, ModalInfo, ModalRow } from './styles';
+import { Container, ContainerBody, ContainerOptions, TableEmployees, Td, Tr, ButtonTable, ContainerModal, Modal, ModalIcon, ModalTitle, ModalInfo } from './styles';
 
 const ListEmployees = ({ match }) => {
 
   const isMobile = window.screen.width <= 678;
   const [search, setSearch] = useState('');
   const [viewEmployee, setViewEmployee] = useState(false);
-  const [employees, setEmployees] = useState([
+  const [employees] = useState([
     {
       name: 'Bruno Martins',
       phone: '(62) 993455654',

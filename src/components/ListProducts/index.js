@@ -9,14 +9,14 @@ import Header from '../Header';
 import InputSearch from '../InputSearch';
 import Button from '../Button';
 import Input from '../Input';
-import { Container, ContainerBody, ContainerOptions, TableProducts, Td, Tr, ButtonTable, ContainerModal, Modal, ModalIcon, ModalTitle, ModalInfo, ModalRow } from './styles';
+import { Container, ContainerBody, ContainerOptions, TableProducts, Td, Tr, ButtonTable, ContainerModal, Modal, ModalIcon, ModalTitle, ModalInfo } from './styles';
 
 const ListProducts = ({ match }) => {
 
   const isMobile = window.screen.width <= 678;
   const [search, setSearch] = useState('');
   const [viewProduct, setViewProduct] = useState(false);
-  const [products, setProducts] = useState([
+  const [products] = useState([
     {
       name: 'Amortecedor',
       unMed: 'PC',
