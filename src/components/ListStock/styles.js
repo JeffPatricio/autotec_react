@@ -23,7 +23,7 @@ export const ContainerOptions = styled.div`
   }
 `;
 
-export const TableEmployees = styled.table`
+export const TableStock = styled.table`
   margin-top: 30px;
   width: 100%;
   border-collapse: collapse;
@@ -36,7 +36,6 @@ export const Tr = styled.tr`
   border: 0 solid #FFF;
   border-bottom-color: #FFF;
   border-bottom-width: ${props => props.head ? 0 : '10px'};
-  cursor: pointer;
   &:hover{
     background: ${props => props.head ? '#FFF' : '#DFDFDF'};
   }
@@ -66,9 +65,6 @@ export const ButtonTable = styled.button`
   background: ${props => props.delete ? '#BBB' : '#3EA2FF'};
   margin: 0 3px;
   cursor: pointer;
-  &:hover{
-    background: ${props => props.delete ? '#AAA' : '#2796f7'};
-  }
 `;
 
 export const ContainerModal = styled.div`
@@ -95,9 +91,6 @@ export const Modal = styled.div`
   width: 700px;
   background: #FFF;
   border-radius: 20px;
-  @media (max-width: 668px) {
-    max-height: 500px;
-  }
 `;
 
 export const ModalIcon = styled.div`
@@ -119,9 +112,6 @@ export const ModalInfo = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   padding: 20px;
-  @media (max-width: 668px) {
-    overflow: auto;
-  }
 `;
 
 export const ModalRow = styled.div`

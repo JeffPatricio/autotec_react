@@ -23,7 +23,7 @@ export const ContainerOptions = styled.div`
   }
 `;
 
-export const TableEmployees = styled.table`
+export const TableProducts = styled.table`
   margin-top: 30px;
   width: 100%;
   border-collapse: collapse;
